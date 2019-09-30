@@ -4,7 +4,7 @@ exports.requestInstallPermission = function (success, error) {
     exec(success, error, 'ToolkitPlugin', 'requestInstallPermission', null);
 };
 
-exports.requestInstallPermission = function (success, error) {
+exports.requestNotifyPermission = function (success, error) {
     exec(success, error, 'ToolkitPlugin', 'requestNotifyPermission', null);
 };
 
