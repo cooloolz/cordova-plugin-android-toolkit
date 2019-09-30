@@ -29,7 +29,7 @@ deviceInfo: {
 
 ### 检查应用安装权限
 
-WeichaiServicePlugin && WeichaiServicePlugin.checkInstallPermission(() => {
+ToolkitPlugin && ToolkitPlugin.requestInstallPermission(() => {
       console.log("成功：" + canInstall)
     });
 
@@ -38,7 +38,7 @@ WeichaiServicePlugin && WeichaiServicePlugin.checkInstallPermission(() => {
 
 ### 检查应用通知权限
 
-WeichaiServicePlugin && WeichaiServicePlugin.checkNotifyPermission(() => {
+ToolkitPlugin && ToolkitPlugin.requestNotifyPermission(() => {
       console.log("成功：" + canNotify)
     });
     
@@ -48,7 +48,7 @@ WeichaiServicePlugin && WeichaiServicePlugin.checkNotifyPermission(() => {
 let permissions: string[] = ["android.permission.READ_PHONE_STATE", "android.permission.ACCESS_FINE_LOCATION",
       "android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE"];
       
-WeichaiServicePlugin && WeichaiServicePlugin.requestPermissions(permissions, (pluginResult: any[]) => {
+ToolkitPlugin && ToolkitPlugin.requestPermissions(permissions, (pluginResult: any[]) => {
       console.log("成功：")
     });
   
