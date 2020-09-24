@@ -264,7 +264,8 @@ public class ToolkitPlugin extends CordovaPlugin {
         } else if (resultCode == Activity.RESULT_CANCELED) {
             if (req.action == DEVICE_INFO || req.action == INSTALL_PERMISSION
                     || req.action == NOTIFY_PERMISSION || req.action == REQUEST_PERMISSIONS) {
-                executeRequest(req);
+                //executeRequest(req);
+                pendingRequests.resolveWithSuccess(req);
             } else if (req.action == APP_SETTING) {
                 pendingRequests.resolveWithSuccess(req);
             }
