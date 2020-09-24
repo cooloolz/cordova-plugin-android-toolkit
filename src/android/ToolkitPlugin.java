@@ -122,9 +122,9 @@ public class ToolkitPlugin extends CordovaPlugin {
         // areNotificationsEnabled方法的有效性官方只最低支持到API 19，低于19的仍可调用此方法不过只会返回true，即默认为用户已经开启了通知。
         boolean notifyPermission = manager.areNotificationsEnabled();
         if (!notifyPermission) {
-            pendingRequests.resolveWithSuccess(req,"false");
+            pendingRequests.resolveWithSuccess(req,false);
         } else {
-            pendingRequests.resolveWithSuccess(req,"true");
+            pendingRequests.resolveWithSuccess(req,true);
         }
     }
     /**
@@ -137,7 +137,7 @@ public class ToolkitPlugin extends CordovaPlugin {
         if (!notifyPermission) {
             this.switchToNotificationSettings(req);
         } else {
-            pendingRequests.resolveWithSuccess(req,"true");
+            pendingRequests.resolveWithSuccess(req,true);
         }
     }
 

@@ -103,8 +103,8 @@ public class PendingRequests {
      *
      * @param req The request to be resolved
      */
-    public synchronized void resolveWithSuccess(Request req, String message) {
-        req.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, message));
+    public synchronized void resolveWithSuccess(Request req, boolean status) {
+        req.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, status));
         requests.remove(req.requestCode);
     }
 
