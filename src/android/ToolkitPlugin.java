@@ -58,6 +58,9 @@ public class ToolkitPlugin extends CordovaPlugin {
             case "requestInstallPermission":
                 requestInstallPermission(pendingRequests.createRequest(INSTALL_PERMISSION, null, callbackContext));
                 break;
+            case "checkNotifyPermission":
+                checkNotifyPermission(pendingRequests.createRequest(NOTIFY_PERMISSION, null, callbackContext));
+                break;
             case "requestNotifyPermission":
                 requestNotificationPermission(pendingRequests.createRequest(NOTIFY_PERMISSION, null, callbackContext));
                 break;
@@ -134,7 +137,7 @@ public class ToolkitPlugin extends CordovaPlugin {
         if (!notifyPermission) {
             this.switchToNotificationSettings(req);
         } else {
-            pendingRequests.resolveWithSuccess(req);
+            pendingRequests.resolveWithSuccess(req,"true");
         }
     }
 
