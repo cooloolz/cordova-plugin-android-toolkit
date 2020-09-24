@@ -62,7 +62,7 @@ public class ToolkitPlugin extends CordovaPlugin {
                 checkNotifyPermission(pendingRequests.createRequest(NOTIFY_PERMISSION, null, callbackContext));
                 break;
             case "requestNotifyPermission":
-                requestNotificationPermission(pendingRequests.createRequest(NOTIFY_PERMISSION, null, callbackContext));
+                switchToNotificationSettings(pendingRequests.createRequest(NOTIFY_PERMISSION, null, callbackContext));
                 break;
             case "requestPermissions":
                 _unGrantedPermissions.clear();
