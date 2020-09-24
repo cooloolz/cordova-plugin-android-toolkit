@@ -114,6 +114,19 @@ public class ToolkitPlugin extends CordovaPlugin {
     /**
      * 检查应用通知权限
      */
+    private void checkNotifyPermission(PendingRequests.Request req) {
+        NotificationManagerCompat manager = NotificationManagerCompat.from(this.cordova.getActivity());
+        // areNotificationsEnabled方法的有效性官方只最低支持到API 19，低于19的仍可调用此方法不过只会返回true，即默认为用户已经开启了通知。
+        boolean notifyPermission = manager.areNotificationsEnabled();
+        if (!notifyPermission) {
+            pendingRequests.resolveWithSuccess(req,"false");
+        } else {
+            pendingRequests.resolveWithSuccess(req,"true");
+        }
+    }
+    /**
+     *  请求应用通知权限
+     */
     private void requestNotificationPermission(PendingRequests.Request req) {
         NotificationManagerCompat manager = NotificationManagerCompat.from(this.cordova.getActivity());
         // areNotificationsEnabled方法的有效性官方只最低支持到API 19，低于19的仍可调用此方法不过只会返回true，即默认为用户已经开启了通知。
@@ -264,8 +277,8 @@ public class ToolkitPlugin extends CordovaPlugin {
         } else if (resultCode == Activity.RESULT_CANCELED) {
             if (req.action == DEVICE_INFO || req.action == INSTALL_PERMISSION
                     || req.action == NOTIFY_PERMISSION || req.action == REQUEST_PERMISSIONS) {
-                //executeRequest(req);
-                pendingRequests.resolveWithSuccess(req);
+                executeRequest(req);
+                //pendingRequests.resolveWithSuccess(req);
             } else if (req.action == APP_SETTING) {
                 pendingRequests.resolveWithSuccess(req);
             }
@@ -333,7 +346,7 @@ public class ToolkitPlugin extends CordovaPlugin {
         if (req.action == INSTALL_PERMISSION) {
             requestInstallPermission(req);
         } else if (req.action == NOTIFY_PERMISSION) {
-            requestNotificationPermission(req);
+            checkNotifyPermission(req);
         } else if (req.action == REQUEST_PERMISSIONS) {
             requestPermissions(req);
         } else if (req.action == DEVICE_INFO) {

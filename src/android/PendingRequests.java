@@ -97,6 +97,16 @@ public class PendingRequests {
         req.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, req.results));
         requests.remove(req.requestCode);
     }
+    /**
+     * Removes the request from the array of pending requests and sends a successful plugin result
+     * to the CallbackContext that contains the result of the request
+     *
+     * @param req The request to be resolved
+     */
+    public synchronized void resolveWithSuccess(Request req, String message) {
+        req.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, message));
+        requests.remove(req.requestCode);
+    }
 
 
     /**
