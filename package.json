@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-android-toolkit",
+  "name": "cordova-plugin-android-toolkit-fork",
   "version": "0.0.2",
   "description": "declare let ToolkitPlugin: any;",
   "main": "index.js",
