@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-android-toolkit-fork",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "declare let ToolkitPlugin: any;",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/cooloolz/cordova-plugin-android-toolkit.git"
   },
-  "keywords": [],
+  "keywords": ["cordova-plugin-android-toolkit-fork"],
   "author": "yokins",
   "license": "ISC",
   "bugs": {
