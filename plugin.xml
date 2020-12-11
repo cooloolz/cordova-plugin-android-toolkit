@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-android-toolkit" version="0.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin id="cordova-plugin-android-toolkit-fork" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0">
     <name>ToolkitPlugin</name>
+
     <js-module name="ToolkitPlugin" src="www/ToolkitPlugin.js">
         <clobbers target="ToolkitPlugin"/>
     </js-module>
+
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="ToolkitPlugin">

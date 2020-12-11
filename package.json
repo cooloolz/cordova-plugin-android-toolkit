@@ -1,6 +1,6 @@
 {
-  "name": "cordova-plugin-android-toolkit",
-  "version": "0.0.2",
+  "name": "cordova-plugin-android-toolkit-fork",
+  "version": "0.0.1",
   "description": "android toolkit",
   "main": "index.js",
   "scripts": {
